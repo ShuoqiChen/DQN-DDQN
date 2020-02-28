@@ -21,7 +21,7 @@ DDQN, or Dueling Deep Q Networks is an adaptation of DQN reinforcement learning 
 
 **Demo**
 
-![Tracking a moving car](demo/car_with_drift_correction.gif)
+![](demo/dqn_cartpole_episode_0.mp4.gif)
 
-![Tracking a moving toy](demo/sylv_with_drift_correction.gif)
+![](demo/dqn_cartpole_episode_0.mp4.gif)
 
