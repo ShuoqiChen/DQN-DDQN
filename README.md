@@ -4,7 +4,7 @@ Deep Q-Network is a powerful yet intuitive Reinforcement Learning algorithm. Her
 
 First, let us investigate the following questions:
 
-**What is and why Q learning?**
+## What is and why Q learning?
 
 
 Q-learning is an off policy, tabular reinforcement learning algorithm. It is off-policy RL because the q-learning function learns from actions that are not the most updated policy. Essentially, q-learning seeks to learn a policy that maximizes the total reward.
