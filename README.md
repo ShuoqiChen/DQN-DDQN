@@ -19,5 +19,9 @@ Instead of using the tabular reprenestation of the of the state-action, in Deep 
 
 DDQN, or Dueling Deep Q Networks is an adaptation of DQN reinforcement learning algorithms that tries to create a Q value via two function estimators: one that estimates the advantage function, and another that estimates the value function. DDQN is introduced to solve Q value overestimation issue commonly appears in DQN (since DQN uses a single target network to both select and evaluate every action).
 
+**Demo**
 
+![Tracking a moving car](demo/car_with_drift_correction.gif)
+
+![Tracking a moving toy](demo/sylv_with_drift_correction.gif)
 
