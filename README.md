@@ -21,7 +21,14 @@ DDQN, or Dueling Deep Q Networks is an adaptation of DQN reinforcement learning 
 
 ## Demo
 
-![](demo/dqn_cartpole_episode_0.mp4.gif)
+### Before training
 
-![](demo/dqn_cartpole_episode_0.mp4.gif)
+![](demo/dqn_cartpole_episode_0.gif)
 
+![](demo/dqn_mountainCar_episode_0.gif)
+
+### After traning (4500+ episodes)
+
+![](demo/dqn_cartpole_episode_4500.gif)
+
+![](demo/dqn_mountainCar_episode_9000.gif)
