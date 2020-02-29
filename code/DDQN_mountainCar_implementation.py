@@ -91,7 +91,7 @@ class DoubleDQNAgent:
             self.epsilon *= self.epsilon_decay
 
     def burn_in_memory(self, env):
-        # Initialize your replay memory with a burn_in number of episodes / transitions. 
+        # Initialize the replay memory with a burn_in number of episodes / transitions. 
         counter = 0
         while counter <= self.train_start:
             state = env.reset()
@@ -107,7 +107,7 @@ class DoubleDQNAgent:
 
     def sample_batch(self, batch_size=32):
         # This function returns a batch of randomly sampled transitions - i.e. state, action, reward, next state, terminal flag tuples. 
-        # You will feed this to your model to train.
+        # we will feed this to the model to train.
         return random.sample(self.memory, batch_size)
 
 
@@ -115,11 +115,11 @@ class DoubleDQNAgent:
     def train(self):
 
         # In this function, we will train our network. 
-        # If training without experience replay_memory, then you will interact with the environment 
-        # in this function, while also updating your network parameters. 
+        # If training without experience replay_memory, then we will interact with the environment 
+        # in this function, while also updating the network parameters. 
 
-        # When use replay memory, you should interact with environment here, and store these 
-        # transitions to memory, while also updating your model.
+        # When use replay memory, we should interact with environment here, and store these 
+        # transitions to memory, while also updating the model.
 
 
         if len(self.memory) < self.train_start:
@@ -274,11 +274,11 @@ if __name__ == "__main__":
                 
 
 
-# Note: if you have problems creating video captures on servers without GUI,
-#       you could save and relaod model to create videos on your laptop. 
+# Note: if we have problems creating video captures on servers without GUI,
+#       we could save and relaod model to create videos on the laptop. 
 def test_video(agent, env, epi):
     # Usage: 
-    #   you can pass the arguments within agent.train() as:
+    #   we can pass the arguments within agent.train() as:
     #       if episode % int(self.num_episodes/3) == 0:
     #           test_video(self, self.environment_name, episode)
     save_path = "./videos-%s-%s" % (env, epi)

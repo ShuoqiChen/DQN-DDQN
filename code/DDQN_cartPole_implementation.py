@@ -26,7 +26,7 @@ class DoubleDQNAgent:
     # (5) Create a function for Experience Replay.
 
     def __init__(self, state_size, action_size):
-        # if you want to see Cartpole learning, then change to True
+        # if we want to see Cartpole learning, then change to True
         self.render = False
         self.load_model = False
         # get size of state and action
@@ -88,7 +88,7 @@ class DoubleDQNAgent:
             self.epsilon *= self.epsilon_decay
 
     def burn_in_memory(self, env):
-        # Initialize your replay memory with a burn_in number of episodes / transitions. 
+        # Initialize the replay memory with a burn_in number of episodes / transitions. 
         counter = 0
         while counter <= self.train_start:
             state = env.reset()
@@ -104,7 +104,7 @@ class DoubleDQNAgent:
 
     def sample_batch(self, batch_size=32):
         # This function returns a batch of randomly sampled transitions - i.e. state, action, reward, next state, terminal flag tuples. 
-        # You will feed this to your model to train.
+        # we will feed this to the model to train.
         return random.sample(self.memory, batch_size)
 
 
@@ -112,11 +112,11 @@ class DoubleDQNAgent:
     def train(self):
 
         # In this function, we will train our network. 
-        # If training without experience replay_memory, then you will interact with the environment 
-        # in this function, while also updating your network parameters. 
+        # If training without experience replay_memory, then we will interact with the environment 
+        # in this function, while also updating the network parameters. 
 
-        # When use replay memory, you should interact with environment here, and store these 
-        # transitions to memory, while also updating your model.
+        # When use replay memory, we should interact with environment here, and store these 
+        # transitions to memory, while also updating the model.
 
 
         if len(self.memory) < self.train_start:
@@ -200,7 +200,7 @@ class DoubleDQNAgent:
 
 
 if __name__ == "__main__":
-    # In case of CartPole-v0, you can play until 200 time step
+    # In case of CartPole-v0, we can play until 200 time step
     env = gym.make('CartPole-v0')
     # get size of state and action from environment
     state_size = env.observation_space.shape[0]
@@ -269,11 +269,9 @@ if __name__ == "__main__":
                 # save model weights
                 agent.model.save_weights("./ddqn_cartpole_dqn.h5")
 
-# Note: if you have problems creating video captures on servers without GUI,
-#       you could save and relaod model to create videos on your laptop. 
 def test_video(agent, env, epi):
     # Usage: 
-    #   you can pass the arguments within agent.train() as:
+    #   we can pass the arguments within agent.train() as:
     #       if episode % int(self.num_episodes/3) == 0:
     #           test_video(self, self.environment_name, episode)
     save_path = "./videos-%s-%s" % (env, epi)

@@ -93,7 +93,7 @@ class DQNAgent:
         #    self.epsilon -= self.epsilon_decay
             
     def burn_in_memory(self, env):
-        # Initialize your replay memory with a burn_in number of episodes / transitions. 
+        # Initialize the replay memory with a burn_in number of episodes / transitions. 
         counter = 0
         while counter <= self.train_start:
             state = env.reset()
@@ -110,7 +110,7 @@ class DQNAgent:
 
     def sample_batch(self, batch_size=32):
         # This function returns a batch of randomly sampled transitions - i.e. state, action, reward, next state, terminal flag tuples. 
-        # You will feed this to your model to train.
+        # we will feed this to the model to train.
         return random.sample(self.memory, batch_size)
 
 
@@ -118,11 +118,11 @@ class DQNAgent:
     def train(self):
 
         # In this function, we will train our network. 
-        # If training without experience replay_memory, then you will interact with the environment 
-        # in this function, while also updating your network parameters. 
+        # If training without experience replay_memory, then we will interact with the environment 
+        # in this function, while also updating the network parameters. 
 
-        # When use replay memory, you should interact with environment here, and store these 
-        # transitions to memory, while also updating your model.
+        # When use replay memory, we should interact with environment here, and store these 
+        # transitions to memory, while also updating the model.
 
         if len(self.memory) < self.train_start:
             train_status = False
